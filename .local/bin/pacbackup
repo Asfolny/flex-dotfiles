@@ -3,6 +3,6 @@
 pacman -Qqe \
   | grep -v (pacman -Qqm | string collect) \
   | grep -v (pacman -Qqg base-devel | string collect) \
-  > ~/pkglist
+  > ~/pkglist > ~/pkglist.dist
 
-pacman -Qqm > ~/apkglist
+pacman -Qqm > ~/apkglist > ~/apkglist.dist
