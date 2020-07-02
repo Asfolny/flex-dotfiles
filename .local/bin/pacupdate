@@ -4,7 +4,7 @@ set pacmanupdates (checkupdates | wc -l)
 
 if type checkupdates-aur > /dev/null
    set aurupdates (checkupdates-aur | wc -l)
-   printf "$pacmanupdates ($aurupdates) updates \n"
+   printf "$pacmanupdates($aurupdates) updates \n"
 else
    printf "$pacmanupdates updates \n"
 end
