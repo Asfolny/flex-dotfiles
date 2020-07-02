@@ -2,9 +2,13 @@ checkupdates-aur
 nerd-fonts-jetbrains-mono
 perl-checkupdates-aur
 perl-www-aur
+php73
+phpstorm
+phpstorm-jre
 ttf-font-icons
 ttf-mplus
 ttf-symbola
 ttf-tuladha
 ttf-twemoji
+xorg-font-utils
 yay
