@@ -5,6 +5,7 @@ base
 celluloid
 composer
 dhcpcd
+elasticsearch
 feh
 firefox
 fish
@@ -23,10 +24,15 @@ mednafen
 network-manager-applet
 networkmanager
 nm-connection-editor
+nodejs-lts-erbium
+npm
 openssh
 php
 php-apache
+php-gd
 php-imagick
+php-intl
+php-xsl
 phpmyadmin
 picom
 pulseaudio
@@ -38,6 +44,7 @@ thunderbird
 ttf-roboto
 unzip
 xclip
+xdebug
 xmobar
 xmonad
 xmonad-contrib
