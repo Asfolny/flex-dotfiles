@@ -1,0 +1,20 @@
+# XMonad/xmobar
+* Look into layouts, pick/customize them to look nice
+    * Windows are too packed, and everything sticks to the edges, add spacing and "shrink" windows to fit these slightly more limited sizes
+         * Render all windows in 1080p sizes within these layouts? Or change rendering based on placement/layout used, but let's not keep "cutting" them up all the time (rendering in all sizes at 1080p will be resource intensive)
+* Float specific windows
+    * Give specific windows specific sizes (mgba takes fullscreen, which is not desired)
+
+# PHPStorm/InteliJ (any derivative)
+1. Compare plugins for the specific language to create a minimal working product
+2. Strip it down to minimal size, no need for a terminal, no need for project, make other things floating (strip out database too maybe)
+3. (?) context aware keyboard lookup for a function/something to pop out, this could allow for ONLY having the editor section open, reducing size massively
+
+Stripping out the project tree section requires whatever file manager there is to be context aware of what is opened in phpstorm... tricky
+
+# Theming
+* Use env vars? (pam.d?)
+
+# Misc
+* Add opacity to background (but not through say picom for ALL things)
+* Add Picom
