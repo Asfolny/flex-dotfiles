@@ -28,6 +28,7 @@ nnn
 nodejs-lts-erbium
 npm
 openssh
+pinentry
 php
 php-apache
 php-imagick
