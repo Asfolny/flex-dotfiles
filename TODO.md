@@ -18,3 +18,6 @@ Stripping out the project tree section requires whatever file manager there is t
 # Misc
 * Add opacity to background (but not through say picom for ALL things)
 * Add Picom
+* Unify this repo
+  * No more submodules, possible a small program to check discrepencies between repos, with a local db of "resolved" things
+  * Have one branch per machine, instead of per system type OR one repo per system instead (probably better), with one being the "main" promoted, and the others being derivatives
