@@ -31,3 +31,5 @@ Stripping out the project tree section requires whatever file manager there is t
 
 # Config
 * Merge this and README
+* Cleanup readme
+* Make the other dotfiles into "desktop dotfiles" or something
