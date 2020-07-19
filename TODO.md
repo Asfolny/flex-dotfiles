@@ -4,6 +4,12 @@
          * Render all windows in 1080p sizes within these layouts? Or change rendering based on placement/layout used, but let's not keep "cutting" them up all the time (rendering in all sizes at 1080p will be resource intensive)
 * Float specific windows
     * Give specific windows specific sizes (mgba takes fullscreen, which is not desired)
+* Refactor configs to be multiple files + import
+* Make xmobar into pure haskell config
+    * Make some elements clickable
+    * Get Temps (but only show if too hot)
+    * Click on CPU or Memory -> Open terminal with a list of the current highest (if above X) jobs
+* Top bar in FULL layout to have a better overview of what is open
 
 # PHPStorm/InteliJ (any derivative)
 1. Compare plugins for the specific language to create a minimal working product
