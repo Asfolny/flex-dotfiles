@@ -1,0 +1,8 @@
+#!/bin/env fish
+
+pacman -Qqe \
+  | grep -v (pacman -Qqm | string collect) \
+  | grep -v (pacman -Qqg base-devel | string collect) \
+  > ~/pkglist
+
+pacman -Qqm > ~/apkglist

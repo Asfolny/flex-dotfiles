@@ -1,0 +1,6 @@
+#!/bin/env fish
+
+set pacmanupdates (checkupdates | wc -l)
+set aurupdates (checkupdates-aur | wc -l)
+
+printf "$pacmanupdates($aurupdates) updates \n"
