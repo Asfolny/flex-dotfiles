@@ -1,6 +1,3 @@
-[submodule ".config/fish"]
-	path = .config/fish
-	url = https://github.com/Asfolny/fish-config.git
 [submodule ".xmonad"]
 	path = .xmonad
 	url = https://github.com/Asfolny/xmonad-config.git
