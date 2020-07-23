@@ -5,12 +5,17 @@ import qualified XMonad.StackSet as W
 import XMonad.Actions.MouseResize
 
 -- Data
+import Data.Ratio
 import qualified Data.Map as M
 
 -- Hooks
+import XMonad.ManageHook
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
+import XMonad.Hooks.Place
+import XMonad.Hooks.WorkspaceHistory
 
 -- Utils
 import XMonad.Util.EZConfig
@@ -41,10 +46,6 @@ import XMonad.Layout.PerWorkspace (onWorkspace)
 import XMonad.Layout.Renamed (renamed, Rename(Replace))
 import XMonad.Layout.WindowArranger (windowArrange)
 import qualified XMonad.Layout.ToggleLayouts as T (toggleLayouts)
-
- 
--- Hooks
-import XMonad.Hooks.WorkspaceHistory
 
 ---
 -- Variables
@@ -170,6 +171,21 @@ myStartupHook = do
 myWorkspaces :: [WorkspaceId]
 myWorkspaces = ["dev", "www", "sys", "chat", "doc","game", "vid"]
 
+
+---
+-- Manage Hooks
+-- Custom application rules, use xprop to get data
+---
+myManageHook :: ManageHook
+myManageHook = composeAll
+    [ isDialog               --> doCenterFloat
+    , className =? "firefox" --> doShift "www"
+    , className =? "mGBA"    --> doShift "game" <+> doRectFloat (W.RationalRect (1%4) (1%4) (1%2) (1%2))
+
+    -- Jetbrains specific... might need to edit for other intelliJs tho.
+    , className =? "jetbrains-phpstorm"                        --> doShift "dev"
+    , (className =? "jetbrains-phpstorm" <&&> title =? "win0") --> doCenterFloat
+    ]
 ---
 -- Layouts
 ---
@@ -238,6 +254,7 @@ main = do
     , borderWidth         = myBorderWidth
     , normalBorderColor   = myNormColor
     , focusedBorderColor  = myFocusColor
+    , manageHook          = myManageHook
     , layoutHook          = myLayouts
     , logHook             = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP
                                 { ppOutput          = hPutStrLn xmproc
