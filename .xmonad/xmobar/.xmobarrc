@@ -8,7 +8,7 @@ Config { font        = "xft:JetBrainsMono Nerd Font:pixelsize=12:antialias=true:
                       -- Time and date
                       Run Date "\xf133 %b %d %Y (%H:%M)" "date" 50
                       -- Network up and down
-                    , Run DynNetwork ["-t", "\xfbf4 <rx> \xfbf2 <tx>", "-S", "True", "--", "--devices", "wlp2s0,enp4s0f3u1"] 20
+                    , Run DynNetwork ["-t", "\xfbf2 <rx> \xfbf4 <tx>", "-S", "True", "-x", "N/A", "--", "--devices", "wlan0,enp4s0f3u1,enp4s0f4u2"] 20
                       -- CPU usage number and percent
                     , Run Cpu ["-t", "\xfb19 cpu: <total>%", "-H", "50", "--high", "red"] 20
                       -- Ram usage
