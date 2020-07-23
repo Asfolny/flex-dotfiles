@@ -1,6 +1,9 @@
 import XMonad
 import qualified XMonad.StackSet as W
 
+-- Actions
+import XMonad.Actions.MouseResize
+
 -- Data
 import qualified Data.Map as M
 
@@ -20,9 +23,25 @@ import XMonad.Prompt.Shell
 import XMonad.Prompt.FuzzyMatch
 import Control.Arrow (first)
 
--- Layout
-import XMonad.Layout.SimpleFloat
+-- Layouts
+import XMonad.Layout.GridVariants (Grid(Grid))
+import XMonad.Layout.SimplestFloat
+import XMonad.Layout.ResizableTile
+import XMonad.Layout.Tabbed
+
+-- Layout Modifiers
+import XMonad.Layout.LayoutModifier
+import XMonad.Layout.LimitWindows (limitWindows)
+import XMonad.Layout.Magnifier
+import XMonad.Layout.MultiToggle (mkToggle, single, EOT(EOT), (??))
+import XMonad.Layout.MultiToggle.Instances (StdTransformers(NBFULL, MIRROR, NOBORDERS))
+import XMonad.Layout.NoBorders
+import XMonad.Layout.Spacing
 import XMonad.Layout.PerWorkspace (onWorkspace)
+import XMonad.Layout.Renamed (renamed, Rename(Replace))
+import XMonad.Layout.WindowArranger (windowArrange)
+import qualified XMonad.Layout.ToggleLayouts as T (toggleLayouts)
+
  
 -- Hooks
 import XMonad.Hooks.WorkspaceHistory
@@ -149,13 +168,63 @@ myStartupHook = do
 -- Workspaces
 ---
 myWorkspaces :: [WorkspaceId]
-myWorkspaces = ["dev", "www", "sys", "chat", "doc","game"]
+myWorkspaces = ["dev", "www", "sys", "chat", "doc","game", "vid"]
 
 ---
 -- Layouts
 ---
-defaultLayout = layoutHook def
-myLayouts     = avoidStruts $ onWorkspace "game" simpleFloat $ defaultLayout
+mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
+mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
+
+-- No borders on a single window, prevents gaps.
+mySpacing' :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
+mySpacing' i = spacingRaw True (Border i i i i) True (Border i i i i) True
+
+-- Layout Definitions
+tall    = renamed [Replace "tall"]
+          $ limitWindows 12
+          $ mySpacing 8
+          $ ResizableTall 1 (3/100) (1/2) []
+ 
+magnify = renamed [Replace "magnify"]
+          $ magnifier
+          $ limitWindows 12
+          $ mySpacing 8
+          $ ResizableTall 1 (3/100) (1/2) []
+
+monocle = renamed [Replace "monocle"]
+          $ limitWindows 20 Full
+
+floats  = renamed [Replace "floats"]
+          $ limitWindows 20 simplestFloat
+       
+grid    = renamed [Replace "grid"]
+          $ limitWindows 12
+          $ mySpacing 8
+          $ mkToggle (single MIRROR)
+          $ Grid (16/10)
+tabs    = renamed [Replace "tabs"]
+          $ tabbed shrinkText myTabConfig
+  where
+    myTabConfig = def { fontName            = myFont
+                      , activeColor         = myFocusColor
+                      , inactiveColor       = myNormColor
+                      , activeBorderColor   = myNormColor
+                      , inactiveBorderColor = myNormColor
+                      , activeTextColor     = "#ffffff"
+                      , inactiveTextColor   = myFocusColor
+                      }
+
+-- defaultLayout = layoutHook def
+-- myLayouts     = avoidStruts $ onWorkspace "game" simpleFloat $ defaultLayout
+myLayouts = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
+          where
+           myDefaultLayout =    tall
+           --                 ||| magnify
+           --                 ||| noBorders monocle
+           --                 ||| floats
+                              ||| noBorders tabs
+                              ||| grid
 
 ---
 -- Main
