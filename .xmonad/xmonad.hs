@@ -183,6 +183,7 @@ myWorkspaces = ["dev", "www", "sys", "chat", "doc","game", "vid"]
 myManageHook :: ManageHook
 myManageHook = composeAll
     [ isDialog               --> doCenterFloat
+    , isFullscreen           --> doFullFloat
     , className =? "firefox" --> doShift "www"
     , className =? "mGBA"    --> doShift "game" <+> doRectFloat (W.RationalRect (1%4) (1%4) (1%2) (1%2))
     
