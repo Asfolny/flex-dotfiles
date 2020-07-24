@@ -15,7 +15,6 @@
 * Check keybindings for layout changing
     * Find a way to quickly change to Tabs for example
     * Move grid to a keybind only
-* Rename layouts to have capital first letters 
 
 # PHPStorm/InteliJ (any derivative really)
 1. Compare plugins for the specific language to create a minimal working product
