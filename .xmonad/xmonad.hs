@@ -81,8 +81,15 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 -- Because of XMonad.Util.EZConfig, keymaps can be written simpler like this
 myKeys :: [(String, X ())]
 myKeys =
-    [ ("M-S-<Return>", shellPrompt myXPromptConfig)
-    , ("M-<Return>", spawn myTerminal)
+    -- Main keybindings
+    [ ("M-S-<Return>"  , shellPrompt myXPromptConfig)
+    , ("M-<Return>"    , spawn myTerminal)
+
+    -- Multimedia keys
+    , ("<XF86AudioMute>"        , spawn "amixer set -q Master toggle")
+    , ("<XF86AudioLowerVolume>" , spawn "amixer set -q Master 5%-")
+    , ("<XF86AudioRaiseVolume>" , spawn "amixer set -q Master 5%+")
+    , ("<XF86AudioMicMute>"     , spawn "amixer set -q Capture toggle")
     ]
 
 ---
