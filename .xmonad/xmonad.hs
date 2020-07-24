@@ -66,10 +66,10 @@ myBorderWidth :: Dimension
 myBorderWidth = 2
 
 myNormColor :: String
-myNormColor   = "#6d7d7a"
+myNormColor   = "#6D7D7A"
 
 myFocusColor :: String
-myFocusColor  = "#aec7c2"
+myFocusColor  = "#AEC7C2"
 
 windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
@@ -93,9 +93,9 @@ myXPromptConfig =
     def
       { font                = myFont
       , bgColor             = "#303533"
-      , fgColor             = "#c0c2c1"
+      , fgColor             = "#C0C2C1"
       , bgHLight            = "#444947"
-      , fgHLight            = "#d5d6d6"
+      , fgHLight            = "#D5D6D6"
       , borderColor         = myNormColor
       , promptBorderWidth   = 0
       , promptKeymap        = myXPKeymap
