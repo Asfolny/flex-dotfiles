@@ -111,9 +111,6 @@ myXPromptConfig =
       , maxComplRows        = Nothing
       }
 
---myPromptList :: [(String, XPConfig -> X ())]
---promptList = []
-
 ---
 -- XPrompt Keymap
 ---
@@ -231,8 +228,6 @@ tabs    = renamed [Replace "tabs"]
                       , inactiveTextColor   = myFocusColor
                       }
 
--- defaultLayout = layoutHook def
--- myLayouts     = avoidStruts $ onWorkspace "game" simpleFloat $ defaultLayout
 myLayouts = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
           where
            myDefaultLayout =    tall
