@@ -9,9 +9,14 @@
     * Make some elements clickable
     * Get Temps (but only show if too hot)
     * Click on CPU or Memory -> Open terminal with a list of the current highest (if above X) jobs
+        * if possible make this a dropdown instead
 * Top bar in FULL layout to have a better overview of what is open
+* Add Audio to xmobar (and mic with mute and unmuted state, ignore mic volume control, let applications handle that)
+* Check keybindings for layout changing
+    * Find a way to quickly change to Tabs for example
+* Rename layouts to have capital first letters 
 
-# PHPStorm/InteliJ (any derivative)
+# PHPStorm/InteliJ (any derivative really)
 1. Compare plugins for the specific language to create a minimal working product
 2. Strip it down to minimal size, no need for a terminal, no need for project, make other things floating (strip out database too maybe)
 3. (?) context aware keyboard lookup for a function/something to pop out, this could allow for ONLY having the editor section open, reducing size massively
