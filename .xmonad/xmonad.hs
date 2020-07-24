@@ -222,10 +222,10 @@ tabs    = renamed [Replace "tabs"]
     myTabConfig = def { fontName            = myFont
                       , activeColor         = myFocusColor
                       , inactiveColor       = myNormColor
-                      , activeBorderColor   = myNormColor
-                      , inactiveBorderColor = myNormColor
-                      , activeTextColor     = "#ffffff"
-                      , inactiveTextColor   = myFocusColor
+                      , activeBorderColor   = "#BDD1CD" -- FocusColor lightened by 5%
+                      , inactiveBorderColor = "#616F6D" -- NormColor darkened by 5%
+                      , activeTextColor     = "#D5D6D6"
+                      , inactiveTextColor   = "#C0C2C1"
                       }
 
 myLayouts = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
