@@ -230,7 +230,8 @@ tabs    = renamed [Replace "tabs"]
 
 myLayouts = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
           where
-           myDefaultLayout =    tall
+           myDefaultLayout =      tall
+                              ||| Mirror tall
            --                 ||| magnify
            --                 ||| noBorders monocle
            --                 ||| floats
