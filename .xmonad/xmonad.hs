@@ -185,7 +185,7 @@ myManageHook = composeAll
     [ isDialog               --> doCenterFloat
     , className =? "firefox" --> doShift "www"
     , className =? "mGBA"    --> doShift "game" <+> doRectFloat (W.RationalRect (1%4) (1%4) (1%2) (1%2))
-
+    
     -- Jetbrains specific... might need to edit for other intelliJs tho.
     , className =? "jetbrains-phpstorm"                        --> doShift "dev"
     , (className =? "jetbrains-phpstorm" <&&> title =? "win0") --> doCenterFloat
@@ -201,29 +201,29 @@ mySpacing' :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spac
 mySpacing' i = spacingRaw True (Border i i i i) True (Border i i i i) True
 
 -- Layout Definitions
-tall    = renamed [Replace "tall"]
+tall    = renamed [Replace "Tall"]
           $ limitWindows 12
           $ mySpacing 8
           $ ResizableTall 1 (3/100) (1/2) []
  
-magnify = renamed [Replace "magnify"]
+magnify = renamed [Replace "Magnify"]
           $ magnifier
           $ limitWindows 12
           $ mySpacing 8
           $ ResizableTall 1 (3/100) (1/2) []
 
-monocle = renamed [Replace "monocle"]
+monocle = renamed [Replace "Monocle"]
           $ limitWindows 20 Full
 
-floats  = renamed [Replace "floats"]
+floats  = renamed [Replace "Floats"]
           $ limitWindows 20 simplestFloat
        
-grid    = renamed [Replace "grid"]
+grid    = renamed [Replace "Grid"]
           $ limitWindows 12
           $ mySpacing 8
           $ mkToggle (single MIRROR)
           $ Grid (16/10)
-tabs    = renamed [Replace "tabs"]
+tabs    = renamed [Replace "Tabs"]
           $ tabbed shrinkText myTabConfig
   where
     myTabConfig = def { fontName            = myFont
