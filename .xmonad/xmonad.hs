@@ -230,9 +230,9 @@ tabs    = renamed [Replace "Tabs"]
     myTabConfig = def { fontName            = myFont
                       , activeColor         = myFocusColor
                       , inactiveColor       = myNormColor
-                      , activeBorderColor   = "#BDD1CD" -- FocusColor lightened by 5%
-                      , inactiveBorderColor = "#616F6D" -- NormColor darkened by 5%
-                      , activeTextColor     = "#D5D6D6"
+                      , activeBorderColor   = "#90B2AB" -- FocusColor darkened by 10%
+                      , inactiveBorderColor = "#55625F" -- NormColor darkened by 10%
+                      , activeTextColor     = "#303533"
                       , inactiveTextColor   = "#C0C2C1"
                       }
 
