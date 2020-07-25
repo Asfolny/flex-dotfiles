@@ -84,6 +84,7 @@ myKeys =
     -- Main keybindings
     [ ("M-S-<Return>"  , shellPrompt myXPromptConfig)
     , ("M-<Return>"    , spawn myTerminal)
+    , ("M-l"           , spawn "slock")
 
     -- Multimedia keys
     , ("<XF86AudioMute>"        , spawn "amixer set -q Master toggle")
