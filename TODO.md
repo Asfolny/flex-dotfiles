@@ -25,14 +25,17 @@ Stripping out the project tree section requires whatever file manager there is t
 
 # Theming
 * Use env vars? (pam.d?)
+* XDM customization (login screen)
 
 # Misc
 * Add opacity to background (but not through say picom for ALL things)
-* Add Picom
 * Unify this repo
     * No more submodules, possible a small program to check discrepencies between repos, with a local db of "resolved" things
     * Have one branch per machine, instead of per system type OR one repo per system instead (probably better), with one being the "main" promoted, and the others being derivatives
 * Change iwd's iwctl coloring (station wlan0 get-networks color is black, which is hard to see with black on white alacritty)
+* Better youtube downloader
+    * Use urlstring to check if video is downloaded, flag to override name always (+ config setting), default to interactive
+    * Add hash for quality(s) so when re-downloading, not only will it correctly realize it has been downloaded in that format, but also allow for quality check (does it exist in a higher quality? Ask to skip...)
 
 
 # Config
