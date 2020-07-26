@@ -18,6 +18,6 @@ function rmext --description Remove\ an\ extension\ from\ all\ files\ in\ a\ giv
 
     for file in $files
         echo "Removing .$argv[1] from $file"
-        mv $file (string trim --right --chars=.$argv[1] $file)
+        mv $file (echo $file | rev | cut -d. -f2- | rev)
     end
 end
