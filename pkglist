@@ -37,10 +37,12 @@ pulseeffects
 pulsemixer
 r
 rsync
+slock
 stack
 thunderbird
 ttf-roboto
 unzip
+wget
 xclip
 xdebug
 xdg-user-dirs
@@ -51,4 +53,6 @@ xmonad
 xmonad-contrib
 xorg-server
 xorg-xdm
+xorg-xev
+xorg-xmodmap
 youtube-dl
