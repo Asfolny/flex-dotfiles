@@ -234,7 +234,7 @@ tabs    = renamed [Replace "Tabs"]
                       , inactiveTextColor   = "#C0C2C1"
                       }
 
-myLayouts = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
+myLayouts = smartBorders $ avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts floats $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
           where
            myDefaultLayout =      tall
                               ||| Mirror tall
