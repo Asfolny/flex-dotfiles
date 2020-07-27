@@ -17,6 +17,8 @@
     * Move grid to a keybind only
 * Change ManageHook to allow a list of "move these to X workspace" (one per workspace?)
 * Change managehook to have a list of items that just need to float (center float too?)
+* Create an extension (prompt) that allows opening (and searching) desktop application entries (https://wiki.archlinux.org/index.php/desktop_entries)
+    * Include a thumbnail creator (separate extension) to generate icons for the search results 
 
 # PHPStorm/InteliJ (any derivative really)
 1. Compare plugins for the specific language to create a minimal working product
