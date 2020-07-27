@@ -188,6 +188,7 @@ myManageHook = composeAll
     , className =? "firefox" --> doShift "www"
     , className =? "mGBA"    --> doShift "game" <+> doRectFloat (W.RationalRect (1%4) (1%4) (1%2) (1%2))
     , className =? "Lutris"  --> doShift "game"
+    , className =? "Steam"   --> doShift "game"
     
     -- Jetbrains specific... might need to edit for other intelliJs tho.
     , className =? "jetbrains-phpstorm"                        --> doShift "dev"
