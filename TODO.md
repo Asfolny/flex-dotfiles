@@ -15,6 +15,8 @@
 * Check keybindings for layout changing
     * Find a way to quickly change to Tabs for example
     * Move grid to a keybind only
+* Change ManageHook to allow a list of "move these to X workspace" (one per workspace?)
+* Change managehook to have a list of items that just need to float (center float too?)
 
 # PHPStorm/InteliJ (any derivative really)
 1. Compare plugins for the specific language to create a minimal working product
