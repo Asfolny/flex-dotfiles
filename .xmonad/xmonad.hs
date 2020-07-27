@@ -5,6 +5,7 @@ import qualified XMonad.StackSet as W
 import XMonad.Actions.MouseResize
 
 -- Data
+import Data.List
 import Data.Ratio
 import qualified Data.Map as M
 
@@ -182,18 +183,19 @@ myWorkspaces = ["dev", "www", "sys", "chat", "doc","game", "vid"]
 -- Custom application rules, use xprop to get data
 ---
 myManageHook :: ManageHook
-myManageHook = composeAll
-    [ isDialog               --> doCenterFloat
-    , isFullscreen           --> doFullFloat
-    , className =? "firefox" --> doShift "www"
-    , className =? "mGBA"    --> doShift "game" <+> doRectFloat (W.RationalRect (1%4) (1%4) (1%2) (1%2))
-    , className =? "Lutris"  --> doShift "game"
-    , className =? "Steam"   --> doShift "game"
+myManageHook = composeAll . concat $
+    [ [ isDialog               --> doCenterFloat ]
+    , [ isFullscreen           --> doFullFloat ]
+    , [ className =? "firefox" --> doShift "www" ]
+    , [ className =? "mGBA"    --> doShift "game" <+> doRectFloat (W.RationalRect (1%4) (1%4) (1%2) (1%2)) ]
+    , [ className =? "Lutris"  --> doShift "game" ]
+    , [ className =? "Steam"   --> doShift "game" ]
     
     -- Jetbrains specific... might need to edit for other intelliJs tho.
-    , className =? "jetbrains-phpstorm"                        --> doShift "dev"
-    , (className =? "jetbrains-phpstorm" <&&> title =? "win0") --> doCenterFloat
+    , [ fmap ( c `isInfixOf`) className --> doShift "dev" | c <- devShift ]
+    , [ (fmap ( c `isInfixOf`) className <&&> title =? "win0") --> doCenterFloat | c <- devShift ]
     ]
+  where devShift = ["jetbrains"]
 ---
 -- Layouts
 ---
