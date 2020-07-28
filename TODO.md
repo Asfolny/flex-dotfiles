@@ -10,6 +10,7 @@
     * Get Temps (but only show if too hot)
     * Click on CPU or Memory -> Open terminal with a list of the current highest (if above X) jobs
         * if possible make this a dropdown instead
+    * Click on haskell opens an xmenu with "common" system things (lock, shutdown, restart)
 * Top bar in FULL layout to have a better overview of what is open
 * Add Audio to xmobar (and mic with mute and unmuted state, ignore mic volume control, let applications handle that)
 * Check keybindings for layout changing
