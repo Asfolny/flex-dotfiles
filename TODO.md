@@ -47,3 +47,4 @@ Stripping out the project tree section requires whatever file manager there is t
 * Merge this and README
 * Cleanup readme
 * Make the other dotfiles into "desktop dotfiles" or something
+* Configure Dunst
