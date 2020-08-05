@@ -4,9 +4,10 @@ linux-xanmod
 nerd-fonts-jetbrains-mono
 perl-checkupdates-aur
 perl-www-aur
-pfetch
+pfetch-git
 phpstorm
 phpstorm-jre
+rider
 ttf-font-icons
 ttf-mplus
 ttf-symbola
