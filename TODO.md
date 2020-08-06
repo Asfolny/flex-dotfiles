@@ -13,6 +13,7 @@
     * Click on haskell opens an xmenu with "common" system things (lock, shutdown, restart)
 * Top bar in FULL layout to have a better overview of what is open
 * Add Audio to xmobar (and mic with mute and unmuted state, ignore mic volume control, let applications handle that)
+* Add "Swallow" features, e.g. running nnn or terminal and opening a video with mpv (or an image with feh) should then (xmonad) unmanage the origin (nnn or terminal) as it is for the duration of the gallery/image/video not needed
 * Check keybindings for layout changing
     * Find a way to quickly change to Tabs for example
     * Move grid to a keybind only
