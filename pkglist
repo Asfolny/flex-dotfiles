@@ -50,6 +50,8 @@ man-pages
 mariadb
 mgba-qt
 nemo
+nim
+nimble
 nmap
 nnn
 nodejs-lts-erbium
@@ -65,10 +67,10 @@ pulseaudio-alsa
 pulseaudio-equalizer
 pulseeffects
 pulsemixer
+qutebrowser
 r
 rsync
 slock
-stack
 steam
 thunderbird
 ttf-roboto
