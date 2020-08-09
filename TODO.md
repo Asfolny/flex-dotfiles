@@ -32,6 +32,7 @@ Stripping out the project tree section requires whatever file manager there is t
 # Theming
 * Use env vars? (pam.d?)
 * XDM customization (login screen)
+* Plymouth (boot stuff)
 
 # Misc
 * Add opacity to background (but not through say picom for ALL things)
