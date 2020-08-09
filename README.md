@@ -1,23 +1,12 @@
 # Dotconfig files
-Welcome to my person dotconfig repo, a generic setup for dotconfig
-
-In the master branch is information and other generalities, in the sub-branches these are stripped, to reduce clutter, to specific things
-
-## Usage
-1. Pick a branch
-2. Git clone --bare and checkout (see guide included in credit section)
-3. cp -R *.dist *
-4. tweak to fit your configuration
+Laptop dotconfig files (flex for the lenovo flex 5 I have)
 
 ### Notes
-* Linux refers to arch linux
-  * pacman derivatives for pkglist
-  * yay for apkglist
+* (bare) Arch linux
+* Xanmod Kernel
 
-You might need to tweak it possibly much and more for other distros
-
-## TODO
-Test step 3 for accuracy
+For other packages, just check pkglist for all installed with pacman explicitly (non-dependency)
+Or check apkglist for the "alternative package list", this is a file of things installed that do not exist within pacman (typically AUR, might every now and then include a package that was removed)
 
 ## Credits
 https://www.atlassian.com/git/tutorials/dotfiles
