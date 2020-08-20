@@ -43,6 +43,7 @@ Stripping out the project tree section requires whatever file manager there is t
     * Use urlstring to check if video is downloaded, flag to override name always (+ config setting), default to interactive
     * Add hash for quality(s) so when re-downloading, not only will it correctly realize it has been downloaded in that format, but also allow for quality check (does it exist in a higher quality? Ask to skip...)
 * Colorscript doesn't play well with smaller screens, make renderer pixels scale
+* Save Specific things, like /etc/X11/xorg.conf.d/20-amdgpu.conf, /etc/mkinitcpio.conf
 
 
 # Config
