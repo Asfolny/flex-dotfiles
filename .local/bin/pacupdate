@@ -1,4 +1,4 @@
-#!/bin/env fish
+#!/usr/bin/fish
 
 set pacmanupdates (checkupdates | wc -l)
 set aurupdates (checkupdates-aur | wc -l)
