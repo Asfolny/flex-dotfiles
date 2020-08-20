@@ -12,7 +12,8 @@ In the master branch is information and other generalities, in the sub-branches 
 ### Notes
 * Linux refers to arch linux
   * pacman derivatives for pkglist
-  * yay for apkglist
+  * yay for altpkglist
+* Xanmod Kernel (compiled with _microarchitecture=14 use_numa=n use_tracers=n use_ns=y makepkg -sic)
 
 You might need to tweak it possibly much and more for other distros
 
@@ -21,3 +22,4 @@ Test step 3 for accuracy
 
 ## Credits
 https://www.atlassian.com/git/tutorials/dotfiles
+
