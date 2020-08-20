@@ -1,6 +1,6 @@
 checkupdates-aur
-kakoune-extra-filetypes-git
 linux-xanmod
+linux-xanmod-headers
 nerd-fonts-jetbrains-mono
 perl-checkupdates-aur
 perl-www-aur
@@ -8,10 +8,8 @@ pfetch-git
 phpstorm
 phpstorm-jre
 rider
-shell-color-scripts
 ttf-font-icons
 ttf-mplus
-ttf-symbola
+ttf-symbola-free
 ttf-twemoji
-wd719x-firmware
 yay
