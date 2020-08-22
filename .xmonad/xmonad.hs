@@ -12,6 +12,7 @@ import qualified Data.Map as M
 -- Hooks
 import XMonad.ManageHook
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
@@ -252,13 +253,14 @@ myLayouts = smartBorders $ avoidStruts $ mouseResize $ windowArrange $ T.toggleL
 
 main = do
   xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar/xmobarrc"
-  xmonad $ docks def
+  xmonad $ ewmh def
     { terminal            = myTerminal
     , modMask             = myModMask
     , borderWidth         = myBorderWidth
     , normalBorderColor   = myNormColor
     , focusedBorderColor  = myFocusColor
     , manageHook          = myManageHook
+    , handleEventHook     = fullscreenEventHook <+> docksEventHook
     , layoutHook          = myLayouts
     , logHook             = workspaceHistoryHook <+> dynamicLogWithPP xmobarPP
                                 { ppOutput          = hPutStrLn xmproc
