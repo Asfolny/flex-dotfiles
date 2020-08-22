@@ -10,9 +10,9 @@ Config { font        = "xft:JetBrainsMono Nerd Font:pixelsize=12:antialias=true:
                       -- Network up and down
                     , Run DynNetwork ["-t", "\xfbf2 <rx> \xfbf4 <tx>", "-S", "True", "-x", "N/A", "--", "--devices", "wlan0,enp4s0f3u1,enp4s0f4u2"] 20
                       -- CPU usage number and percent
-                    , Run Cpu ["-t", "\xfb19 cpu: <total>%", "-H", "50", "--high", "red"] 20
+                    , Run Cpu ["-t", "\xfb19 <total>%", "-H", "50", "--high", "red"] 20
                       -- Ram usage
-                    , Run Memory ["-t", "\xf85a mem: <used>M (<usedratio>%)"] 20
+                    , Run Memory ["-t", "\xf85a <used>M (<usedratio>%)"] 20
                       -- Swap
                       --, Run Swap [] 20
                       -- Battery
