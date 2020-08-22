@@ -3,6 +3,7 @@ import qualified XMonad.StackSet as W
 
 -- Actions
 import XMonad.Actions.MouseResize
+import XMonad.Actions.SpawnOn
 
 -- Data
 import Data.List
@@ -84,7 +85,7 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 myKeys :: [(String, X ())]
 myKeys =
     -- Main keybindings
-    [ ("M-S-<Return>"  , shellPrompt myXPromptConfig)
+    [ ("M-S-<Return>"  , shellPromptHere myXPromptConfig)
     , ("M-<Return>"    , spawn myTerminal)
     , ("M-S-l"         , spawn "slock")
 
@@ -163,14 +164,6 @@ myXPKeymap = M.fromList $
          , (xK_Escape, quit)
          ]
 
----
--- Startup Hooks
----
-myStartupHook :: X()
-myStartupHook = do
-    spawnOnce "~/.fehbg &"
-    spawnOnce "picom &"
-    setWMName "LG3D"
 
 ---
 -- Workspaces
@@ -178,6 +171,13 @@ myStartupHook = do
 myWorkspaces :: [WorkspaceId]
 myWorkspaces = ["dev", "www", "sys", "chat", "doc","game", "vid", "mon"]
 
+---
+-- Startup Hooks
+---
+myStartupHook :: X()
+myStartupHook = do
+    spawnOnce   "~/.fehbg &"
+    spawnOnce   "picom &"
 
 ---
 -- Manage Hooks
@@ -185,17 +185,20 @@ myWorkspaces = ["dev", "www", "sys", "chat", "doc","game", "vid", "mon"]
 ---
 myManageHook :: ManageHook
 myManageHook = composeAll . concat $
-    [ [ isDialog               --> doCenterFloat ]
-    , [ isFullscreen           --> doFullFloat ]
-    , [ className =? "firefox" --> doShift "www" ]
-    , [ className =? "mGBA"    --> doShift "game" <+> doRectFloat (W.RationalRect (1%4) (1%4) (1%2) (1%2)) ]
-    , [ className =? "Steam"   --> doShift "game" ]
+    [ [ manageDocks ]
+    , [ manageSpawn ]
+    , [ isDialog                     --> doCenterFloat ]
+    , [ isFullscreen                 --> doFullFloat ]
+    , [ className =? "Brave-browser" --> doShift "www" ]
+    , [ className =? "mGBA"          --> doShift "game" <+> doRectFloat (W.RationalRect (1%4) (1%4) (1%2) (1%2)) ]
+    , [ className =? "Steam"         --> doShift "game" ]
     
     -- Jetbrains specific... might need to edit for other intelliJs tho.
     , [ fmap ( c `isInfixOf`) className --> doShift "dev" | c <- devShift ]
     , [ (fmap ( c `isInfixOf`) className <&&> title =? "win0") --> doCenterFloat | c <- devShift ]
     ]
   where devShift = ["jetbrains"]
+
 ---
 -- Layouts
 ---
