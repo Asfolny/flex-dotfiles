@@ -279,4 +279,5 @@ main = do
                                 }
     , startupHook         = myStartupHook
     , workspaces          = myWorkspaces
+    , focusFollowsMouse   = False
     } `additionalKeysP` myKeys
