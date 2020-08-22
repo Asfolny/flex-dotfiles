@@ -7,4 +7,3 @@ Laptop dotconfig files (flex for the lenovo flex 5 I have)
 
 ## Credits
 https://www.atlassian.com/git/tutorials/dotfiles
-
