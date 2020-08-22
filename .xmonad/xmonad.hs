@@ -169,7 +169,7 @@ myXPKeymap = M.fromList $
 -- Workspaces
 ---
 myWorkspaces :: [WorkspaceId]
-myWorkspaces = ["dev", "www", "sys", "chat", "doc","game", "vid", "mon"]
+myWorkspaces = ["dev", "www", "mail", "sys", "chat", "doc","game", "vid", "mon"]
 
 ---
 -- Startup Hooks
