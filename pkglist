@@ -10,6 +10,7 @@ discord
 dotnet-sdk
 dunst
 efibootmgr
+elasticsearch
 exfat-utils
 feh
 fish
@@ -21,7 +22,9 @@ linux
 linux-firmware
 man-db
 man-pages
+mariadb
 mpv
+neomutt
 nim
 nimble
 nmap
@@ -29,12 +32,18 @@ nodejs-lts-erbium
 npm
 pass
 php
+php-gd
+php-imagick
+php-intl
+php-redis
+php-xsl
 picom
 pulseaudio
 pulseaudio-alsa
 pulsemixer
 qutebrowser
 r
+redis
 rsync
 slock
 ttf-roboto
