@@ -21,6 +21,14 @@
 * Change managehook to have a list of items that just need to float (center float too?)
 * Create an extension (prompt) that allows opening (and searching) desktop application entries (https://wiki.archlinux.org/index.php/desktop_entries)
     * Include a thumbnail creator (separate extension) to generate icons for the search results 
+* Find out (and fix) why SpawnOn does not behave properly
+* Spawn in application on boot, but lazier
+    * E.g. schedule it to start asap, without going ahead immediately
+    * Applications:
+        * bashtop (in a terminal)
+        * Brave (browser)
+        * Steam
+        * Chat (discord, irc terminal, mumble, teamspeak, slack, slack-replacer)
 
 # PHPStorm/InteliJ (any derivative really)
 1. Compare plugins for the specific language to create a minimal working product
