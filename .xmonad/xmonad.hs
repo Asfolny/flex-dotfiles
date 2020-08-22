@@ -252,7 +252,7 @@ myLayouts = smartBorders $ avoidStruts $ mouseResize $ windowArrange $ T.toggleL
 ---
 
 main = do
-  xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar/.xmobarrc"
+  xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar/xmobarrc"
   xmonad $ docks def
     { terminal            = myTerminal
     , modMask             = myModMask
