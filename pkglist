@@ -17,6 +17,8 @@ fish
 git
 iwd
 kakoune
+lib32-acl
+lib32-mesa
 libva-utils
 linux
 linux-firmware
@@ -24,7 +26,6 @@ man-db
 man-pages
 mariadb
 mpv
-neomutt
 nim
 nimble
 nmap
@@ -41,16 +42,19 @@ picom
 pulseaudio
 pulseaudio-alsa
 pulsemixer
-qutebrowser
 r
 redis
 rsync
 slock
+steam
+thunderbird
+ttf-liberation
 ttf-roboto
 unzip
 vdpauinfo
 xclip
 xdebug
+xdotool
 xf86-video-amdgpu
 xf86-video-ati
 xmobar
