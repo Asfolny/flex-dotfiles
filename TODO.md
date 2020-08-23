@@ -34,6 +34,8 @@
 1. Compare plugins for the specific language to create a minimal working product
 2. Strip it down to minimal size, no need for a terminal, no need for project, make other things floating (strip out database too maybe)
 3. (?) context aware keyboard lookup for a function/something to pop out, this could allow for ONLY having the editor section open, reducing size massively
+4. Compile for different configurations, small and specific to the set of "modules"/"plugins" wanted, compile before use if fast enough compile time
+5. Replace underlying rendering with own engine once done
 
 Stripping out the project tree section requires whatever file manager there is to be context aware of what is opened in phpstorm... tricky
 
