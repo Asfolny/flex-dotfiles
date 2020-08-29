@@ -39,7 +39,7 @@ Config { font        = "xft:JetBrainsMono Nerd Font:pixelsize=12:antialias=true:
                       -- pacman check updates and report a NUMBER
                     , Run Com "pacupdate" [] "" 36000
                       -- Kernel version
-                    , Run Com "uname" ["-r"] "" 36000
+                    , Run Com "xanmod-short-uname" [] "uname" 36000
                       -- workspaces, layouts, basically the left side
                     , Run UnsafeStdinReader
                     ]
