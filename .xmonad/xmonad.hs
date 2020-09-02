@@ -178,6 +178,7 @@ myStartupHook :: X()
 myStartupHook = do
     spawnOnce   "~/.fehbg &"
     spawnOnce   "picom &"
+    spawnOnOnce "mon" "alacritty -e bashtop"
 
 ---
 -- Manage Hooks
