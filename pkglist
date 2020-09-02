@@ -7,6 +7,8 @@ bluez
 bluez-utils
 composer
 discord
+docker
+docker-compose
 dotnet-sdk
 dunst
 efibootmgr
@@ -42,6 +44,7 @@ picom
 pulseaudio
 pulseaudio-alsa
 pulsemixer
+qutebrowser
 r
 redis
 rsync
